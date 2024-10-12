@@ -1,15 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Sass Boilerplate</title>
-    <script type="module" src="main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="bussnise card build a project width more flexible abd Reliable">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images//favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontendmentor | Four card feature section</title>
+    <script type="module" src="script.js" defer></script>
   </head>
-  <body>
-    <main class="container">
-      <h1>Hello, Sass!</h1>
-      <p>This is a simple example of using Sass with HTML.</p>
-    </main>
-  </body>
+<body>
+
+  <nav class="toogle">
+    <input type="checkbox"  aria-checked="false" tabindex="0" name="checkbox" id="check" accesskey="D" >
+    <label for="check" title="Alt + Shift + d for switch theme">light mode</label>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" class=sun><path d="M16 7c-4.962 0-9 4.037-9 9s4.038 9 9 9c4.963 0 9-4.037 9-9s-4.037-9-9-9zm0 15c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6zm0-16.361a1.5 1.5 0 0 0 1.5-1.5V2a1.5 1.5 0 0 0-3 0v2.139a1.5 1.5 0 0 0 1.5 1.5zM6.552 8.673a1.498 1.498 0 0 0 2.122 0 1.5 1.5 0 0 0 0-2.121L7.16 5.04A1.5 1.5 0 1 0 5.04 7.161l1.512 1.512zM5.638 16a1.5 1.5 0 0 0-1.5-1.5H2a1.5 1.5 0 0 0 0 3h2.138a1.5 1.5 0 0 0 1.5-1.5zm.914 7.327L5.04 24.84a1.5 1.5 0 1 0 2.121 2.121l1.512-1.512a1.5 1.5 0 1 0-2.12-2.12zM16 26.361a1.5 1.5 0 0 0-1.5 1.5V30a1.5 1.5 0 0 0 3 0v-2.139a1.5 1.5 0 0 0-1.5-1.5zm9.448-3.034a1.5 1.5 0 1 0-2.12 2.121l1.51 1.512a1.496 1.496 0 0 0 2.121 0 1.5 1.5 0 0 0 .001-2.121l-1.512-1.512zM30 14.5h-2.139a1.5 1.5 0 0 0 0 3H30a1.5 1.5 0 0 0 0-3zm-5.612-5.388c.383 0 .767-.146 1.06-.44l1.512-1.51a1.5 1.5 0 1 0-2.121-2.122l-1.512 1.512a1.5 1.5 0 0 0 1.06 2.56z"/></svg>
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="moon"><path fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.63 20a9 9 0 0 1-9.12-8.78A8.61 8.61 0 0 1 14.17 5 10.17 10.17 0 0 0 5 15a10.23 10.23 0 0 0 10.42 10A10.43 10.43 0 0 0 25 18.9a9.3 9.3 0 0 1-4.37 1.1Z"/></svg>
+  </nav>
+  <div class="container">
+        <header class="header">
+          <h1>  Reliable, efficient delivery </h1>
+          <h1 class="typing"> Powered by Technology</h1>
+            <p>
+              Our Artificial Intelligence powered tools use millions of project data points 
+              to ensure that your project is successful
+            </p>
+            
+          </header>
+
+        <main class="card-wrapping">   
+              <section class="blue card">
+                <h2 class="head"> Supervisor</h2>
+                <p >
+                  Monitors activity to identify project roadblocks
+                </p>
+                <img src="./images/icon-supervisor.svg" alt="icon-supervisor" width="60">
+              </section>
+      
+              <section class="red card">
+                <h2 class="head"> Team Builder</h2>
+                <p>
+                  Scans our talent network to create the optimal team for your project
+                </p>
+                <img src="./images/icon-team-builder.svg" alt="icon-team-builder" width="60">
+              </section>
+        
+              <section class="yellow card">
+                <h2 class="head">Karma</h2>
+                <p>
+                  Regularly evaluates our talent to ensure quality
+                </p>
+                <img src="./images/icon-karma.svg" alt="icon-karma" width="60">
+              </section>
+        
+              <section class="cyan card">
+                <h2 class="head">Calculator</h2>
+                <p>
+                  Uses data from past projects to provide better delivery estimates
+                </p>
+                <img src="./images/icon-calculator.svg" alt="icon-calculator" width="60">
+              </section>
+          </main> 
+    </div>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" accesskey="F">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/rio-rifaldi/rio-rifaldi.github.io/tree/main/four-card-design" target="_blank" accesskey="R">Rio rifaldi</a>
+    </p>
+  </footer>
+
+ 
+</body>
 </html>

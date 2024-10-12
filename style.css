@@ -1,0 +1,296 @@
+/* ------------------------------------- define color and font ------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+:root{
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(228, 4%, 47%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --bg-typing : white;
+    --bg-cursor : black;
+
+  
+}
+
+
+/* ------------------------------------- reset all element for full controll -------------------------------------  */
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+
+
+/* ------------------------------------- mobile device ------------------------------------- */
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color-scheme: dark;
+
+}
+
+         /* >>--------------------- setting dark mode toggle ---------------------<<  */ 
+
+  
+    .toogle .sun , .toogle .moon{
+        width: 2rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 1.2rem 1.8rem;
+   
+
+    }
+
+
+    .toogle .moon{
+        visibility: hidden;
+        width: 1.6rem;
+        margin: 1.2rem 2.2rem;
+    }
+    .toogle .sun{
+        visibility: visible;
+      
+    
+    } 
+
+
+    .toogle #check , .toogle label{          
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: .8rem 1.8rem;
+       height: 2.5rem;
+       width: 2.5rem;
+       opacity: 0;
+       z-index: 10;
+       cursor: pointer;
+        
+    }
+    
+    .toogle{margin-bottom: 5rem;}
+             /* >>--------------------- ---- ---------------------<<  */ 
+    
+      
+.container{
+    margin: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ----------------------------- header section --------------------------- */
+.container .header {
+    text-align: center;
+    max-width: 30rem;
+
+}
+.container .header h1:first-child{
+    font-weight: 200;
+    text-align: center;
+}
+.container .header .typing{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.container .header p{
+    color: var(--Grayish-Blue);
+    font-size: 1rem;
+    margin: 1.5rem 1rem;
+}
+
+/* ----------------------------- typing animation header  --------------------------- */
+    .container .header .typing{
+        position: relative;
+        width: max-content;
+        margin: 0 auto;
+        letter-spacing: .1rem;
+
+    }
+    .container .header .typing::after,
+    .container .header .typing::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+    }
+    .container .header .typing::before{
+        background-color: var(--bg-typing);
+        animation: typing 1.8s steps(22) forwards 1.4s;
+    }
+    .container .header .typing::after{
+        opacity: 0;
+        width: .12rem; 
+        background-color: var(--bg-cursor);
+        animation: 
+                typing 1.8s steps(22) forwards 1.4s,
+                blink 1.4s steps(22) forwards 1.8s infinite;
+
+        
+    }
+    @keyframes typing {
+        to{
+            left: 100%;
+            opacity: 1;
+        }
+    }
+    @keyframes blink {
+        to{background-color: transparent; opacity: 1;}
+        
+    }
+
+/* ----------------------------- card section --------------------------- */
+.container .card-wrapping{
+    margin: 2rem 0;
+    display: grid;   /* before this, i try to use flexbox but doesnot work  */
+    gap: 2rem;
+}
+.container .card-wrapping .card{
+    max-width: 23rem;
+    padding: 1rem 1.5rem;
+    border-radius: .4rem;
+    box-shadow: 0 10px 1.5rem -8px rgba(0, 0, 0, .19);
+    transition: all 400ms ease;
+    opacity: 0;
+
+    
+}
+.container .card-wrapping .card .head{
+    font-weight: 600;
+    font-size: 1.2rem;
+
+}
+.container .card-wrapping .card p:not(.head){
+    color: var(--Grayish-Blue);
+    font-size: 1rem;
+    margin: .2rem 0;
+
+}
+.container .card-wrapping .card img{
+    margin-top: 3.5rem;
+    float: right;
+    /* width: 4.5rem; */
+    transition: all .4s;
+}
+
+.container .card-wrapping .blue{
+    border-top: 5px solid var(--Cyan);
+    animation: load 1s ease .2s;
+    animation-fill-mode: forwards;
+}
+.container .card-wrapping .red{
+    border-top: 5px solid var(--Red);
+    animation: load 1s ease .6s;
+    animation-fill-mode: forwards;
+
+}
+.container .card-wrapping .yellow{
+    border-top: 5px solid var(--Orange);  
+    animation: load 1s ease 1s;
+    animation-fill-mode: forwards; 
+}
+.container .card-wrapping .cyan{  
+    border-top: 5px solid var(--Blue);
+    animation: load 1s ease 1.4s;
+    animation-fill-mode: forwards;
+}
+
+
+/* -------------------------- card animations -----------------------*/
+
+.container .card-wrapping .card:hover{
+    transform: translateY(7px);
+    cursor: pointer;
+    box-shadow: 0 14px 1.5rem -8px rgba(0, 0, 0, .19);
+    
+}
+
+.container .card-wrapping .card:hover img{
+    transform: scale(1.1);
+}
+
+
+@keyframes load {
+
+    from {
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    
+}
+
+/* ------------------------------------- tablet device ------------------------------------- */
+
+@media screen and (min-width:715px) {
+    .container .header{
+        max-width: 40rem;
+    }
+    .container .card-wrapping .card{
+        max-width: 23rem;
+    }
+
+    .container .card-wrapping{
+        grid-template-rows: repeat(2,1fr );
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+
+/* ------------------------------------- dekstop device ------------------------------------- */
+
+@media screen and (min-width: 1080px) {
+
+    .container .card-wrapping {
+        grid-template-rows: repeat(4,1fr);
+        grid-template-columns: repeat(3,1fr);  
+     
+}
+
+ .container .card-wrapping .blue{
+        grid-row: 2/span 2 ;
+        grid-column: 1;
+    }
+    .container .card-wrapping .red{
+        grid-row: 1 / span 2;
+        grid-column: 2;
+            
+    }
+    .container .card-wrapping .yellow{
+
+        grid-row: 3/ span 2;
+        grid-column: 2;
+        
+    }
+    .container .card-wrapping .cyan{
+      
+        grid-row: 2 / span 2;
+         grid-column: 3;
+    }
+        
+}
+       
+
+  
+
+
+.attribution { font-size: .8rem; text-align: center; margin: 1rem 0; color: var(--Grayish-Blue); }
+.attribution a { color: hsl(228, 45%, 44%); }
